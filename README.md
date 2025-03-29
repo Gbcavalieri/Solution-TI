@@ -1,59 +1,51 @@
-📌 GERENCIAMENTO DE USUÁRIOS
+# 📌 Gerenciamento de Usuários
 
-Este projeto consiste em um sistema de gerenciamento de usuários, permitindo cadastrar, listar, editar e excluir usuários de forma intuitiva.
+Este projeto é uma aplicação full-stack para cadastro, listagem, edição e exclusão de usuários. O front-end foi desenvolvido com React, enquanto o back-end foi construído com Java e Spring Boot, utilizando um banco de dados MySQL.
 
-O projeto foi desenvolvido utilizando:
+#🛠 Tecnologias Utilizadas
 
-Front-end: React
+- **Front-end:** React.js
 
-Back-end: Java (Spring Boot)
+- **Back-end:** Java com Spring Boot
 
-Banco de Dados: MySQL
+- **Banco de Dados:** MySQL
 
-📁 Como baixar o projeto?
+# 📁 Como baixar o projeto?
 
-Clonar o Repositório
+``# Clonar o repositório
+git clone SEU_REPOSITORIO_AQUI``
 
-$ git clone https://github.com/seu-usuario/seu-repositorio.git
-$ cd seu-repositorio
+#🚀 Como rodar o projeto?
 
-🚀 Como executar o projeto?
+#📌 Back-end
 
-Back-end (Porta 3000)
+1. Certifique-se de que o MySQL está rodando na porta **3306**.
 
-Certifique-se de ter o Java e o MySQL instalados.
+2. Configure o banco de dados com o nome **Cadastro**.
 
-Configure o banco de dados MySQL com o nome Cadastro e a porta 3306.
+3. Execute a aplicação Java. O servidor será iniciado na porta **3000**.
 
-Execute a API Java com o comando:
+#📌 Front-end
 
-mvn spring-boot:run
+1. Acesse a pasta do front-end e instale as dependências:
 
-Front-end
+   ``cd frontend npm install``
 
-Certifique-se de ter o Node.js instalado.
+2. Inicie o projeto:
+   ``npm start``
 
-No diretório do projeto, instale as dependências:
+3. Acesse no navegador: http://localhost:3000
 
-npm install
+#💻 Endpoints da API
 
-Execute o projeto:
+# 📌 Cadastrar Usuário
+- **Método HTTP:** POST
 
-npm start
+- **Endpoint:** /usuarios
 
-Acesse no navegador: http://localhost:3000
+- **Parâmetros do corpo da requisição (JSON):**
 
-💻 Endpoints da API
-
-Cadastrar Usuário
-
-Método HTTP: POST
-
-Endpoint: http://localhost:3000/usuarios
-
-Parâmetros do corpo da requisição (JSON):
-
-{
+``{
   "nome": "string",
   "cpf": "string",
   "cep": "string",
@@ -61,41 +53,37 @@ Parâmetros do corpo da requisição (JSON):
   "bairro": "string",
   "cidade": "string",
   "estado": "string"
-}
+}``
 
-Exemplo de requisição CURL:
 
-curl -X POST "http://localhost:3000/usuarios" -H "Content-Type: application/json" -d '{ "nome": "João Silva", "cpf": "12345678900", "cep": "01001000", "logradouro": "Rua Exemplo", "bairro": "Centro", "cidade": "São Paulo", "estado": "SP" }'
+#📌 Listar Usuários
+**Método HTTP:** GET
 
-Listar Usuários
+**Endpoint:** /usuarios
 
-Método HTTP: GET
+**Exemplo de requisição CURL:**
 
-Endpoint: http://localhost:3000/usuarios
+``curl -X GET "http://localhost:3000/usuarios"``
 
-Exemplo de requisição CURL:
 
-curl -X GET "http://localhost:3000/usuarios"
+# 📌 Buscar Usuário por CPF
+**Método HTTP:** GET
 
-Buscar Usuário por CPF
+**Endpoint:** /usuarios/{cpf}
 
-Método HTTP: GET
+**Exemplo de requisição CURL:**
 
-Endpoint: http://localhost:3000/usuarios/{cpf}
+``curl -X GET "http://localhost:3000/usuarios/12345678900"``
 
-Exemplo de requisição CURL:
 
-curl -X GET "http://localhost:3000/usuarios/12345678900"
+# 📌 Editar Usuário
+**Método HTTP:** PUT
 
-Atualizar Usuário
+**Endpoint:** /usuarios/{cpf}
 
-Método HTTP: PUT
+**Parâmetros do corpo da requisição (JSON):**
 
-Endpoint: http://localhost:3000/usuarios/{cpf}
-
-Parâmetros do corpo da requisição (JSON):
-
-{
+``{
   "nome": "string",
   "cep": "string",
   "logradouro": "string",
@@ -103,23 +91,29 @@ Parâmetros do corpo da requisição (JSON):
   "cidade": "string",
   "estado": "string"
 }
+``
 
-Exemplo de requisição CURL:
 
-curl -X PUT "http://localhost:3000/usuarios/12345678900" -H "Content-Type: application/json" -d '{ "nome": "João Silva", "cep": "01001000", "logradouro": "Rua Exemplo", "bairro": "Centro", "cidade": "São Paulo", "estado": "SP" }'
+**Exemplo de requisição CURL:**
 
-Excluir Usuário
+``curl -X PUT "http://localhost:3000/usuarios/12345678900" ``
+``-H "Content-Type: application/json" -d '{ "nome": "João Silva", "cep": "01002000", "logradouro": "Rua Y", "bairro": "Centro", "cidade": "São Paulo", "estado": "SP"}'``
 
-Método HTTP: DELETE
 
-Endpoint: http://localhost:3000/usuarios/{cpf}
+# 📌 Excluir Usuário
 
-Exemplo de requisição CURL:
+**Método HTTP:** DELETE
 
-curl -X DELETE "http://localhost:3000/usuarios/12345678900"
+**Endpoint:** /usuarios/{cpf}
 
-📄 Documentação
+**Exemplo de requisição CURL:**
+``curl -X DELETE "http://localhost:3000/usuarios/12345678900"``
 
-Para visualizar a documentação e testar os endpoints diretamente pelo navegador, acesse:
+
+# 📄 Documentação
+
+**A API pode ser testada diretamente no navegador através do Swagger:**
 
 http://localhost:3000/swagger-ui.html
+
+
