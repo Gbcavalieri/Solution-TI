@@ -2,7 +2,7 @@
 
 Este projeto é uma aplicação full-stack para cadastro, listagem, edição e exclusão de usuários. O front-end foi desenvolvido com React, enquanto o back-end foi construído com Java e Spring Boot, utilizando um banco de dados MySQL.
 
-#🛠 Tecnologias Utilizadas
+# 🛠 Tecnologias Utilizadas
 
 - **Front-end:** React.js
 
@@ -15,9 +15,9 @@ Este projeto é uma aplicação full-stack para cadastro, listagem, edição e e
 ``# Clonar o repositório
 git clone SEU_REPOSITORIO_AQUI``
 
-#🚀 Como rodar o projeto?
+# 🚀 Como rodar o projeto?
 
-#📌 Back-end
+# 📌 Back-end
 
 1. Certifique-se de que o MySQL está rodando na porta **3306**.
 
@@ -25,7 +25,7 @@ git clone SEU_REPOSITORIO_AQUI``
 
 3. Execute a aplicação Java. O servidor será iniciado na porta **3000**.
 
-#📌 Front-end
+# 📌 Front-end
 
 1. Acesse a pasta do front-end e instale as dependências:
 
@@ -36,7 +36,7 @@ git clone SEU_REPOSITORIO_AQUI``
 
 3. Acesse no navegador: http://localhost:3000
 
-#💻 Endpoints da API
+# 💻 Endpoints da API
 
 # 📌 Cadastrar Usuário
 - **Método HTTP:** POST
@@ -56,7 +56,7 @@ git clone SEU_REPOSITORIO_AQUI``
 }``
 
 
-#📌 Listar Usuários
+# 📌 Listar Usuários
 **Método HTTP:** GET
 
 **Endpoint:** /usuarios
