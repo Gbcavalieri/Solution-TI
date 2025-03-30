@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react";
 import { listarUsuarios, excluirUsuario } from "../services/apiUsuarios";
 import { useNavigate } from "react-router-dom";
 
-const ListarUsuarios = ({ setUsuarioParaEditar }) => { // Verifica se está sendo passada corretamente
-  console.log(setUsuarioParaEditar); 
-  // Verifique se a prop está sendo passada corretamente
+const ListarUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
   const navigate = useNavigate();
 
-  // Função para carregar os usuários
   const carregarUsuarios = async () => {
     const dados = await listarUsuarios();
     setUsuarios(dados);
@@ -18,19 +15,9 @@ const ListarUsuarios = ({ setUsuarioParaEditar }) => { // Verifica se está send
     carregarUsuarios();
   }, []);
 
-  // Função para editar um usuário
-  const handleEditar = (usuario) => {
-    console.log("Botão Editar clicado para:", usuario); // Debug no console
-    if (setUsuarioParaEditar && typeof setUsuarioParaEditar === 'function') {
-      console.log("setUsuarioParaEditar está sendo chamado.");
-      setUsuarioParaEditar(usuario);
-      navigate("/editar"); // Navegar para a página de edição
-    } else {
-      console.error('setUsuarioParaEditar não está definido corretamente');
-    }
+  const handleEditar = (cpf) => {
+    navigate(`/editar/${cpf}`); // Navega para a página de edição com o CPF como parâmetro
   };
-
-  // Função para excluir um usuário
   const handleExcluir = async (cpf) => {
     await excluirUsuario(cpf);
     carregarUsuarios();
@@ -44,7 +31,7 @@ const ListarUsuarios = ({ setUsuarioParaEditar }) => { // Verifica se está send
           usuarios.map((usuario) => (
             <li key={usuario.cpf}>
               {usuario.nome} - {usuario.cpf} - {usuario.cep} - {usuario.logradouro} - {usuario.bairro} - {usuario.cidade} - {usuario.estado}
-              <button onClick={() => handleEditar(usuario)}>Editar</button>
+              <button onClick={() => handleEditar(usuario.cpf)}>Editar</button>
               <button onClick={() => handleExcluir(usuario.cpf)}>Excluir</button>
             </li>
           ))

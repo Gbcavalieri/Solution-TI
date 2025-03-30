@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import FormularioCadastro from "./FormularioCadastro";
 import ListarUsuarios from "./ListarUsuarios";
+import FormularioEditar from "./FormularioEditar"
 
 function GerenciamentoUsuarios() {
   const [usuarioParaEditar, setUsuarioParaEditar] = useState(null);
@@ -34,7 +35,7 @@ function GerenciamentoUsuarios() {
         <Route
           path="/editar"
           element={
-            <FormularioCadastro
+            <FormularioEditar
               usuarioParaEditar={usuarioParaEditar}
               setUsuarioParaEditar={setUsuarioParaEditar}
               onUsuarioSalvo={handleUsuarioSalvo}
