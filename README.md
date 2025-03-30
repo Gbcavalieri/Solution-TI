@@ -15,15 +15,23 @@ Este projeto é uma aplicação full-stack para cadastro, listagem, edição e e
 ``# Clonar o repositório
 git clone SEU_REPOSITORIO_AQUI``
 
-# 🚀 Como rodar o projeto?
+#🚀 Como rodar o projeto?
 
-# 📌 Back-end
+# 📌 Banco de Dados
 
 1. Certifique-se de que o MySQL está rodando na porta **3306**.
 
 2. Configure o banco de dados com o nome **Cadastro**.
 
-3. Execute a aplicação Java. O servidor será iniciado na porta **3000**.
+3. Copie o código do arquivo data.sql que está na pasta resources e cole no seu banco de dados
+
+
+# 📌 Back-end
+
+1. Execute a aplicação Java.
+   ``mvn spring-boot:run``
+
+2. O servidor será iniciado na porta **8080**.
 
 # 📌 Front-end
 
